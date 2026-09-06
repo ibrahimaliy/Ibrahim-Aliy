@@ -1,0 +1,100 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<<
+  /Type /Page
+  /Parent 2 0 R
+  /MediaBox [0 0 612 792]
+  /Resources <<
+    /Font <<
+      /F1 4 0 R
+      /F2 5 0 R
+    >>
+  >>
+  /Contents 6 0 R
+>>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+6 0 obj
+<< /Length 5526 >>
+stream
+BT /F2 16 Tf 50 750 Td (IBRAHIM ALIY) Tj ET
+BT /F1 9.5 Tf 50 736 Td (Nigeria  |  +234 810 362 8977  |  ibrahimaliy1907@gmail.com  |  github.com/ibrahimaliy) Tj ET
+BT /F2 10.5 Tf 50 716 Td (PROFESSIONAL SUMMARY) Tj ET
+0.5 w 0.2 0.2 0.2 RG 50 713 m 562 713 l S
+BT /F1 8.5 Tf 50 701 Td (Frontend Developer and Telecommunications Engineering student with hands-on experience building responsive, production-) Tj ET
+BT /F1 8.5 Tf 50 690 Td (oriented web applications using React.js, Next.js, TypeScript, JavaScript, and Tailwind CSS. Currently a Frontend Developer) Tj ET
+BT /F1 8.5 Tf 50 679 Td (Intern at Outcess Solutions, contributing to user interfaces, admin experiences, API-driven features, testing, and debugging.) Tj ET
+BT /F1 8.5 Tf 50 668 Td (Experienced with e-commerce workflows, authentication, state management, REST API integration, Git-based collaboration, and) Tj ET
+BT /F1 8.5 Tf 50 657 Td (practical networking/IT support.) Tj ET
+BT /F2 10.5 Tf 50 642 Td (TECHNICAL SKILLS) Tj ET
+0.5 w 0.2 0.2 0.2 RG 50 639 m 562 639 l S
+BT /F2 8.5 Tf 50 627 Td (Frontend: ) Tj /F1 8.5 Tf (React.js, Next.js, TypeScript, JavaScript (ES6+), Tailwind CSS, HTML5, CSS3, Responsive Design) Tj ET
+BT /F2 8.5 Tf 50 616 Td (State & Data: ) Tj /F1 8.5 Tf (Zustand, TanStack React Query, REST API Integration) Tj ET
+BT /F2 8.5 Tf 50 605 Td (Tools: ) Tj /F1 8.5 Tf (Git, GitHub, VS Code, Figma, npm) Tj ET
+BT /F2 8.5 Tf 50 594 Td (Networking & IT: ) Tj /F1 8.5 Tf (LAN/WAN Setup, Cisco Networking, Technical Support, Network Troubleshooting) Tj ET
+BT /F2 8.5 Tf 50 583 Td (Core Strengths: ) Tj /F1 8.5 Tf (Problem Solving, Team Collaboration, Adaptability, Communication, Time Management) Tj ET
+BT /F2 10.5 Tf 50 568 Td (PROFESSIONAL EXPERIENCE) Tj ET
+0.5 w 0.2 0.2 0.2 RG 50 565 m 562 565 l S
+BT /F2 9.5 Tf 50 553 Td (Frontend Developer Intern | Outcess Solutions | May 2026 - Present) Tj ET
+BT /F1 8.5 Tf 60 541 Td (\225  Develop and improve responsive web interfaces using React.js and modern frontend development practices.) Tj ET
+BT /F1 8.5 Tf 60 530 Td (\225  Contribute to production web pages and admin interfaces, implementing UI enhancements and resolving QA-reported issues.) Tj ET
+BT /F1 8.5 Tf 60 519 Td (\225  Integrate frontend features with REST APIs and collaborate with team members using Git and GitHub.) Tj ET
+BT /F1 8.5 Tf 60 508 Td (\225  Participate in testing, debugging, code maintenance, and responsive optimization across desktop and mobile experiences.) Tj ET
+BT /F2 9.5 Tf 50 494 Td (Technical Freelancer - IT & Security Services | 2024 - Present) Tj ET
+BT /F1 8.5 Tf 60 482 Td (\225  Deliver networking, technical support, CCTV, and access-control solutions and troubleshoot hardware, software, and) Tj ET
+BT /F1 8.5 Tf 70 471 Td (connectivity issues.) Tj ET
+BT /F2 9.5 Tf 50 457 Td (Network Administrator & Security Installer - TechMax | 2023 - 2024) Tj ET
+BT /F1 8.5 Tf 60 445 Td (\225  Executed network deployments, diagnostics, system troubleshooting, and security-system installations.) Tj ET
+BT /F2 9.5 Tf 50 431 Td (Technical Officer - FEMTECH IT | 2022 - 2023) Tj ET
+BT /F1 8.5 Tf 60 419 Td (\225  Resolved hardware and software issues and supported the maintenance of network infrastructure.) Tj ET
+BT /F2 10.5 Tf 50 404 Td (SELECTED SOFTWARE PROJECTS) Tj ET
+0.5 w 0.2 0.2 0.2 RG 50 401 m 562 401 l S
+BT /F2 9.5 Tf 50 389 Td (Fila Yoruba E-Commerce Platform | Next.js, TypeScript, Tailwind CSS) Tj ET
+BT /F1 8.5 Tf 60 377 Td (\225  Built a full-featured e-commerce platform for a premium Yoruba Fila brand, combining a responsive customer storefront with an) Tj ET
+BT /F1 8.5 Tf 70 366 Td (integrated admin and back-office management system.) Tj ET
+BT /F1 8.5 Tf 60 355 Td (\225  Developed product and collection management, cart, wishlist, filtering, checkout, order management, inventory/stock tracking,) Tj ET
+BT /F1 8.5 Tf 70 344 Td (payment workflows, and customer-facing shopping experiences.) Tj ET
+BT /F1 8.5 Tf 60 333 Td (\225  Built administrative features for managing products, orders, inventory, customers, sales operations, and day-to-day store) Tj ET
+BT /F1 8.5 Tf 70 322 Td (activities from a centralized dashboard. Used Zustand and TanStack React Query for state and data management.) Tj ET
+BT /F2 9.5 Tf 50 308 Td (Attendance Management System | React.js, JavaScript, Tailwind CSS) Tj ET
+BT /F1 8.5 Tf 60 296 Td (\225  Developed a role-based attendance system with dedicated administrator, lecturer, and student experiences, responsive) Tj ET
+BT /F1 8.5 Tf 70 285 Td (interfaces, and application state management.) Tj ET
+BT /F2 9.5 Tf 50 271 Td (Additional React & JavaScript Projects) Tj ET
+BT /F1 8.5 Tf 60 259 Td (\225  Built a music player, memory card game, notepad application, and weather application demonstrating component architecture,) Tj ET
+BT /F1 8.5 Tf 70 248 Td (state management, API integration, and responsive UI development.) Tj ET
+BT /F2 10.5 Tf 50 233 Td (EDUCATION) Tj ET
+0.5 w 0.2 0.2 0.2 RG 50 230 m 562 230 l S
+BT /F2 9.5 Tf 50 218 Td (B.Tech. Telecommunications Engineering (In Progress)) Tj ET
+BT /F1 8.5 Tf 50 207 Td (Federal University of Technology, Minna | 400 Level | Expected Graduation: 2027) Tj ET
+BT /F2 10.5 Tf 50 192 Td (CERTIFICATIONS) Tj ET
+0.5 w 0.2 0.2 0.2 RG 50 189 m 562 189 l S
+BT /F1 8.5 Tf 60 177 Td (\225  CCNA - Makintouch (2022)) Tj ET
+BT /F1 8.5 Tf 60 166 Td (\225  Diploma in Networking (Network+) - Femtech IT (2021)) Tj ET
+BT /F1 8.5 Tf 60 155 Td (\225  Diploma in Computer Engineering (CompTIA A+) - Femtech IT (2021)) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000276 00000 n 
+0000000346 00000 n 
+0000000421 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+6026
+%%EOF
