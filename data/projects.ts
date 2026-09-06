@@ -163,6 +163,8 @@ export const projects: Project[] = [
     live: "https://filayoruba-theta.vercel.app/",
     liveNote:
       "The customer storefront is live. The admin dashboard is live in production, but login credentials are intentionally restricted because the platform is being prepared for commercial sale. A live walkthrough/demo is readily available upon request to showcase the dashboard and its full operational capabilities.",
+    isPrivateRepo: true,
+    githubLabel: "Private Commercial Repo · Walkthrough on Request",
     github: "https://github.com/ibrahimaliy",
     accent: "green",
     featured: true,

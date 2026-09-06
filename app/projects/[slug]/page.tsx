@@ -22,6 +22,7 @@ import {
 import { ProjectBadge } from "@/components/ProjectBadge";
 import { TechChip } from "@/components/TechChip";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { CodeProofViewer } from "@/components/CodeProofViewer";
 import { getProject, projects } from "@/data/projects";
 
 export function generateStaticParams() {
@@ -148,17 +149,39 @@ export default async function ProjectPage({
 
         {/* Direct Action Links */}
         <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3 mt-6 sm:mt-8">
-          {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-800/80 hover:bg-zinc-700 text-xs font-semibold text-zinc-200 transition-colors border border-zinc-700"
-            >
-              <Github size={14} />
-              <span>{isProfessional ? "Organization Repository" : "View Source Code"}</span>
-              <ArrowUpRight size={13} />
-            </a>
+          {isFlagship ? (
+            <>
+              <a
+                href="mailto:ibrahimaliy19@gmail.com?subject=Fila%20Yoruba%20-%20Codebase%20Walkthrough%20Request&body=Hi%20Ibrahim%2C%20I%20would%20like%20to%20request%20a%20private%20codebase%20walkthrough%20of%20the%20Fila%20Yoruba%20e-commerce%20platform."
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-800/90 hover:bg-zinc-700 text-xs font-semibold text-zinc-100 transition-colors border border-zinc-700 shadow-sm"
+              >
+                <Lock size={13} className="text-amber-400" />
+                <span>Private Commercial Repo · Walkthrough on Request</span>
+                <ArrowUpRight size={13} />
+              </a>
+              <a
+                href="https://github.com/ibrahimaliy"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg border border-zinc-300 dark:border-zinc-800 text-xs font-mono text-zinc-700 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition"
+              >
+                <Github size={13} />
+                <span>GitHub Profile</span>
+              </a>
+            </>
+          ) : (
+            project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-800/80 hover:bg-zinc-700 text-xs font-semibold text-zinc-200 transition-colors border border-zinc-700"
+              >
+                <Github size={14} />
+                <span>{isProfessional ? "Organization Repository" : "View Source Code"}</span>
+                <ArrowUpRight size={13} />
+              </a>
+            )
           )}
           {project.live && (
             <a
@@ -175,12 +198,23 @@ export default async function ProjectPage({
 
         {/* Commercial Platform Notice Callout */}
         {project.liveNote && (
-          <div className="mt-6 rounded-xl border border-amber-500/25 bg-amber-500/5 p-4 flex items-start gap-3 text-xs text-amber-200/90 leading-relaxed">
-            <Info size={16} className="text-amber-400 shrink-0 mt-0.5" />
-            <div>
-              <strong className="text-amber-300 font-semibold">Live Operational Notice: </strong>
-              {project.liveNote}
+          <div className="mt-6 rounded-xl border border-amber-500/25 bg-amber-500/5 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-amber-200/90 leading-relaxed">
+            <div className="flex items-start gap-3">
+              <Info size={16} className="text-amber-400 shrink-0 mt-0.5" />
+              <div>
+                <strong className="text-amber-300 font-semibold">Live Operational Notice: </strong>
+                {project.liveNote}
+              </div>
             </div>
+            {isFlagship && (
+              <a
+                href="mailto:ibrahimaliy19@gmail.com?subject=Fila%20Yoruba%20-%20Admin%20Dashboard%20Walkthrough%20Request&body=Hi%20Ibrahim%2C%20I%20would%20like%20to%20schedule%20a%20live%20walkthrough%20of%20the%20Fila%20Yoruba%20admin%20operations%20suite."
+                className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 font-semibold text-xs transition shrink-0 whitespace-nowrap border border-amber-500/30 self-start sm:self-auto"
+              >
+                <span>Request Admin Walkthrough</span>
+                <ArrowUpRight size={13} />
+              </a>
+            )}
           </div>
         )}
 
@@ -412,6 +446,26 @@ export default async function ProjectPage({
                 </div>
               ))}
             </div>
+
+            {/* Walkthrough Scheduling Callout */}
+            <div className="mt-8 rounded-xl border border-cyan-500/25 bg-cyan-950/20 p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="space-y-1">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-cyan-400 flex items-center gap-1.5">
+                  <Lock size={13} />
+                  Operational Verification & Screen Walkthrough
+                </span>
+                <p className="text-xs text-zinc-300 max-w-2xl leading-relaxed">
+                  The admin back-office is live in production. Because the system is prepared for commercial sale, credentials are restricted. I provide live, 1-on-1 walkthroughs via Google Meet or screen recording demonstrations to verify the catalog, stock ledger, and fulfillment pipeline in action.
+                </p>
+              </div>
+              <a
+                href="mailto:ibrahimaliy19@gmail.com?subject=Fila%20Yoruba%20-%20Admin%20Dashboard%20Walkthrough%20Request&body=Hi%20Ibrahim%2C%20I%20would%20like%20to%20schedule%20a%20live%20walkthrough%20of%20the%20Fila%20Yoruba%20admin%20operations%20suite."
+                className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-zinc-950 font-semibold text-xs transition shrink-0"
+              >
+                <span>Request Admin Walkthrough</span>
+                <ArrowUpRight size={13} />
+              </a>
+            </div>
           </section>
 
           {/* E-Commerce System Design */}
@@ -443,6 +497,9 @@ export default async function ProjectPage({
               </div>
             </div>
           </section>
+
+          {/* Code Proof Section (Zustand, Reservation Engine, Order State Machine) */}
+          <CodeProofViewer />
 
           {/* Case Study Process */}
           <section className="section container">
@@ -764,19 +821,30 @@ export default async function ProjectPage({
         <section className="container py-16 border-t border-zinc-800/80">
           <p className="eyebrow">PROJECT LINKS</p>
           <div className="flex flex-wrap items-center gap-4 mt-4">
-            {project.github && (
+            {isFlagship ? (
               <a
-                href={project.github}
-                target="_blank"
-                rel="noreferrer"
+                href="mailto:ibrahimaliy19@gmail.com?subject=Fila%20Yoruba%20-%20Codebase%20Walkthrough%20Request&body=Hi%20Ibrahim%2C%20I%20would%20like%20to%20request%20a%20private%20codebase%20walkthrough%20of%20the%20Fila%20Yoruba%20e-commerce%20platform."
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-xs font-semibold text-zinc-100 transition-colors border border-zinc-700"
               >
-                <Github size={15} />
-                {isProfessional
-                  ? "Organization Repository (Outcess Solutions)"
-                  : "View GitHub Repository"}
+                <Lock size={15} className="text-amber-400" />
+                <span>Private Commercial Repo · Walkthrough on Request</span>
                 <ArrowUpRight size={14} />
               </a>
+            ) : (
+              project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-xs font-semibold text-zinc-100 transition-colors border border-zinc-700"
+                >
+                  <Github size={15} />
+                  {isProfessional
+                    ? "Organization Repository (Outcess Solutions)"
+                    : "View GitHub Repository"}
+                  <ArrowUpRight size={14} />
+                </a>
+              )
             )}
             {project.live && (
               <a

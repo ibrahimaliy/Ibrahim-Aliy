@@ -51,6 +51,8 @@ export interface Project {
   stages?: StageItem[];
   learnings?: string[];
   github?: string;
+  githubLabel?: string;
+  isPrivateRepo?: boolean;
   live?: string;
   liveNote?: string;
   portalRoutes?: PortalRoute[];

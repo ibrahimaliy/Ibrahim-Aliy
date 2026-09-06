@@ -1,5 +1,6 @@
 import React from "react";
-import { Code2, Layout, Database, Wrench, Network, CheckCircle2 } from "lucide-react";
+import Link from "next/link";
+import { Code2, Database, Wrench, Zap, CheckCircle2, ArrowRight } from "lucide-react";
 
 export function SkillsSection() {
   const pillars = [
@@ -22,10 +23,10 @@ export function SkillsSection() {
       note: "Version control workflows, pull requests, UI design translation, package management, and debugging.",
     },
     {
-      title: "Networking & IT Systems",
-      icon: <Network size={16} className="text-zinc-400" />,
-      skills: ["LAN/WAN Setup", "Cisco Networking", "Technical Support", "Network Troubleshooting"],
-      note: "Practical network infrastructure, diagnostics, hardware systems, and telecommunications fundamentals.",
+      title: "Web Standards & Performance",
+      icon: <Zap size={16} className="text-zinc-400" />,
+      skills: ["Core Web Vitals", "Lighthouse", "Semantic HTML5", "Accessibility (a11y)", "Responsive Design", "Cross-Browser Testing"],
+      note: "Performance profiling, accessibility compliance, semantic markup, and reliable cross-device rendering.",
     },
   ];
 
@@ -95,6 +96,21 @@ export function SkillsSection() {
             </span>
           ))}
         </div>
+      </div>
+
+      {/* Network Systems & Cisco Credentials Callout */}
+      <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-[#0c0c0e] p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+        <div className="text-zinc-600 dark:text-zinc-400">
+          <span className="font-semibold text-zinc-900 dark:text-zinc-200">Looking for Network Systems & Cisco Credentials? </span>
+          <span>CCNA certification, enterprise LAN/WAN configurations, and telecommunications background are documented in detail below.</span>
+        </div>
+        <Link
+          href="#experience"
+          className="inline-flex items-center gap-1.5 font-mono font-semibold text-emerald-600 dark:text-emerald-400 hover:underline shrink-0"
+        >
+          <span>View Experience & CCNA</span>
+          <ArrowRight size={13} />
+        </Link>
       </div>
     </div>
   );
