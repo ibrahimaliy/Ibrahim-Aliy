@@ -22,7 +22,6 @@ import {
 import { ProjectBadge } from "@/components/ProjectBadge";
 import { TechChip } from "@/components/TechChip";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { CodeProofViewer } from "@/components/CodeProofViewer";
 import { getProject, projects } from "@/data/projects";
 
 export function generateStaticParams() {
@@ -108,9 +107,7 @@ export default async function ProjectPage({
         </h1>
 
         <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed">
-          {isFlagship
-            ? "A dual-sided Yoruba fashion commerce platform connecting a refined customer storefront with real back-office inventory and order operations."
-            : project.summary}
+          {project.summary}
         </p>
 
         {/* Project Meta Details Bar */}
@@ -149,26 +146,28 @@ export default async function ProjectPage({
 
         {/* Direct Action Links */}
         <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3 mt-6 sm:mt-8">
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-xs font-semibold text-zinc-950 transition-colors shadow-sm"
+            >
+              <span>{isFlagship ? "Explore Live Demo" : isAttendance ? "Open Live Portal" : "Visit Live Demo"}</span>
+              <ExternalLink size={13} />
+            </a>
+          )}
           {isFlagship ? (
-            <>
-              <a
-                href="mailto:ibrahimaliy19@gmail.com?subject=Fila%20Yoruba%20-%20Codebase%20Walkthrough%20Request&body=Hi%20Ibrahim%2C%20I%20would%20like%20to%20request%20a%20private%20codebase%20walkthrough%20of%20the%20Fila%20Yoruba%20e-commerce%20platform."
-                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-800/90 hover:bg-zinc-700 text-xs font-semibold text-zinc-100 transition-colors border border-zinc-700 shadow-sm"
-              >
-                <Lock size={13} className="text-amber-400" />
-                <span>Private Commercial Repo · Walkthrough on Request</span>
-                <ArrowUpRight size={13} />
-              </a>
-              <a
-                href="https://github.com/ibrahimaliy"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg border border-zinc-300 dark:border-zinc-800 text-xs font-mono text-zinc-700 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition"
-              >
-                <Github size={13} />
-                <span>GitHub Profile</span>
-              </a>
-            </>
+            <a
+              href="https://github.com/ibrahimaliy"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-800 text-xs font-mono text-zinc-700 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition"
+            >
+              <Github size={14} />
+              <span>GitHub Profile</span>
+              <ArrowUpRight size={13} />
+            </a>
           ) : (
             project.github && (
               <a
@@ -183,21 +182,10 @@ export default async function ProjectPage({
               </a>
             )
           )}
-          {project.live && (
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-xs font-semibold text-zinc-950 transition-colors"
-            >
-              <span>{isFlagship ? "Visit Live Storefront" : isAttendance ? "Open Live Portal" : "Visit Live Demo"}</span>
-              <ExternalLink size={13} />
-            </a>
-          )}
         </div>
 
-        {/* Commercial Platform Notice Callout */}
-        {project.liveNote && (
+        {/* Live Operational Notice Callout (if applicable) */}
+        {!isFlagship && project.liveNote && (
           <div className="mt-6 rounded-xl border border-amber-500/25 bg-amber-500/5 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-amber-200/90 leading-relaxed">
             <div className="flex items-start gap-3">
               <Info size={16} className="text-amber-400 shrink-0 mt-0.5" />
@@ -206,15 +194,6 @@ export default async function ProjectPage({
                 {project.liveNote}
               </div>
             </div>
-            {isFlagship && (
-              <a
-                href="mailto:ibrahimaliy19@gmail.com?subject=Fila%20Yoruba%20-%20Admin%20Dashboard%20Walkthrough%20Request&body=Hi%20Ibrahim%2C%20I%20would%20like%20to%20schedule%20a%20live%20walkthrough%20of%20the%20Fila%20Yoruba%20admin%20operations%20suite."
-                className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 font-semibold text-xs transition shrink-0 whitespace-nowrap border border-amber-500/30 self-start sm:self-auto"
-              >
-                <span>Request Admin Walkthrough</span>
-                <ArrowUpRight size={13} />
-              </a>
-            )}
           </div>
         )}
 
@@ -253,128 +232,130 @@ export default async function ProjectPage({
       {/* ========================================================================= */}
       {isFlagship && (
         <>
-          {/* Dual-Environment System Architecture Callout */}
+          {/* Subsystem Topology Callout */}
           <section className="container py-12">
-            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-400 mb-4">
+            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-500 dark:text-emerald-400 mb-4">
               <Layers size={14} />
-              <span>SYSTEM ARCHITECTURE · DUAL-ENVIRONMENT TOPOLOGY</span>
+              <span>SYSTEM ARCHITECTURE · DUAL-SUBSYSTEM TOPOLOGY</span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Environment 01 */}
-              <div className="rounded-xl border border-zinc-800 bg-[#0e0e11] p-6 sm:p-8 flex flex-col justify-between">
+              {/* Subsystem 01 */}
+              <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50/80 dark:bg-[#0e0e11] p-6 sm:p-8 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-[11px] font-mono font-bold text-emerald-400 uppercase tracking-wider">
+                    <span className="text-[11px] font-mono font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">
                       SUBSYSTEM 01
                     </span>
                     <span className="text-[10px] font-mono text-zinc-500 uppercase">Customer-Facing</span>
                   </div>
-                  <h3 className="text-xl font-bold text-zinc-100 mb-3">
+                  <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-3">
                     Customer Storefront Engine
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed mb-6">
-                    A responsive, high-speed storefront engineered to celebrate Yoruba headwear
-                    culture while driving conversion. Features dynamic fabric/style customization,
-                    live variant pricing, optimistic shopping cart state, and frictionless single-page checkout.
+                  <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
+                    A responsive storefront engineered to celebrate Yoruba headwear
+                    heritage while delivering frictionless digital purchasing. Features style-specific
+                    fabric showcases, head-circumference sizing assistance, optimistic cart management,
+                    and a validated checkout flow.
                   </p>
-                  <ul className="space-y-2 text-xs text-zinc-300 font-mono">
+                  <ul className="space-y-2 text-xs text-zinc-700 dark:text-zinc-300 font-mono">
                     <li className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-emerald-400" />
-                      Dynamic Damask Gobi & Cap variant selection
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                      Authentic Gobi, Abeti Aja, Kente & Damask catalog
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-emerald-400" />
-                      Zustand-powered optimistic cart management
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                      Circumference size guide & variant selector
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-emerald-400" />
-                      Structured address validation & Paystack flow
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                      Zustand persistent cart drawer with instant subtotal
                     </li>
                   </ul>
                 </div>
-                <div className="pt-6 mt-6 border-t border-zinc-800/80 flex items-center justify-between text-[11px] text-zinc-500 font-mono">
-                  <span>Stack: Next.js · Tailwind · Zustand</span>
-                  <span className="text-emerald-400 font-semibold">Live Experience</span>
+                <div className="pt-6 mt-6 border-t border-zinc-200 dark:border-zinc-800/80 flex items-center justify-between text-[11px] text-zinc-500 font-mono">
+                  <span>Stack: Next.js · TypeScript · Tailwind · Zustand</span>
+                  <span className="text-emerald-600 dark:text-emerald-400 font-semibold">Live Experience</span>
                 </div>
               </div>
 
-              {/* Environment 02 */}
-              <div className="rounded-xl border border-zinc-800 bg-[#0e0e11] p-6 sm:p-8 flex flex-col justify-between">
+              {/* Subsystem 02 */}
+              <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50/80 dark:bg-[#0e0e11] p-6 sm:p-8 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-[11px] font-mono font-bold text-cyan-400 uppercase tracking-wider">
+                    <span className="text-[11px] font-mono font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-wider">
                       SUBSYSTEM 02
                     </span>
                     <span className="text-[10px] font-mono text-zinc-500 uppercase">Back-Office Suite</span>
                   </div>
-                  <h3 className="text-xl font-bold text-zinc-100 mb-3">
+                  <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-3">
                     Back-Office Operations Console
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed mb-6">
-                    A purpose-built operations workspace designed for merchant teams. Manages
-                    real-time stock reservations, transitions orders across a finite state machine,
-                    monitors daily sales velocity, and maintains audit logs for customer inquiries.
+                  <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
+                    A purpose-built merchant workspace providing inventory transparency
+                    and order lifecycle oversight. Enables store managers to update product pricing,
+                    monitor SKU stock levels with low-stock warnings, and progress customer orders through fulfillment.
                   </p>
-                  <ul className="space-y-2 text-xs text-zinc-300 font-mono">
+                  <ul className="space-y-2 text-xs text-zinc-700 dark:text-zinc-300 font-mono">
                     <li className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-cyan-400" />
-                      Real-time inventory ledger with low-stock alerts
+                      <span className="h-1.5 w-1.5 rounded-full bg-cyan-500" />
+                      Catalog publishing with fabric and size variations
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-cyan-400" />
-                      Order state machine (Received → Packed → Shipped → Delivered)
+                      <span className="h-1.5 w-1.5 rounded-full bg-cyan-500" />
+                      SKU inventory ledger with real-time stock counters
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-cyan-400" />
-                      Revenue metrics, margin calculations & customer lookup
+                      <span className="h-1.5 w-1.5 rounded-full bg-cyan-500" />
+                      Sequential fulfillment pipeline (Pending → Delivered)
                     </li>
                   </ul>
                 </div>
-                <div className="pt-6 mt-6 border-t border-zinc-800/80 flex items-center justify-between text-[11px] text-zinc-500 font-mono">
+                <div className="pt-6 mt-6 border-t border-zinc-200 dark:border-zinc-800/80 flex items-center justify-between text-[11px] text-zinc-500 font-mono">
                   <span>Scope: Role-Based Admin Operations</span>
-                  <span className="text-cyan-400 font-semibold">Operational Tooling</span>
+                  <span className="text-cyan-600 dark:text-cyan-400 font-semibold">Operational Tooling</span>
                 </div>
               </div>
             </div>
           </section>
 
           {/* Project Overview, Challenge, and Ownership */}
-          <section className="container case-grid border-t border-zinc-800/60">
+          <section className="container case-grid border-t border-zinc-200 dark:border-zinc-800/60">
             <div>
-              <p className="eyebrow">PROJECT OVERVIEW</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-100 tracking-tight">
-                Beyond a storefront: a dual-sided commerce system.
+              <p className="eyebrow">PROJECT BACKGROUND</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">
+                Bridging cultural craft with modern digital commerce.
               </h2>
             </div>
             <div className="space-y-6">
-              <p className="case-lead text-zinc-300">
-                Fila Yoruba was conceived to celebrate Yoruba cultural fashion by creating
-                a digital experience worthy of authentic craftsmanship. It evolved from a
-                basic catalog into a production-grade commerce platform uniting consumer shopping
-                with operational store tools.
+              <p className="case-lead text-zinc-700 dark:text-zinc-300">
+                Fila Yoruba was conceived to celebrate Yoruba cultural fashion by translating
+                authentic craftsmanship into a dependable, high-converting digital shopping experience.
+                Rather than treating the platform as a simple image catalog, I built a complete,
+                dual-sided system connecting customer discovery with essential back-office store operations.
               </p>
-              <div className="rounded-xl border border-zinc-800 bg-[#0e0e11] p-6 space-y-3">
-                <h4 className="text-sm font-bold text-zinc-100 flex items-center gap-2">
-                  <ShieldCheck size={16} className="text-emerald-400" />
-                  The Engineering Challenge
+              <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-[#0e0e11] p-6 space-y-3">
+                <h4 className="text-sm font-bold text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
+                  <ShieldCheck size={16} className="text-emerald-500 dark:text-emerald-400" />
+                  The Sizing & E-Commerce Challenge
                 </h4>
-                <p className="text-xs text-zinc-400 leading-relaxed">
-                  Real e-commerce platforms require far more than displaying pictures and prices.
-                  They require reliable product discovery, live inventory reservations, accurate
-                  order states, financial payment guarantees, customer identity continuity,
-                  refund management, and intuitive tooling for non-technical store managers.
+                <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  Unlike conventional knit caps or adjustable hats, authentic Yoruba fila are made
+                  from structured, non-stretch woven fabrics (Aso-Oke, Damask, Kente). Sizing mismatches
+                  lead directly to customer dissatisfaction and returns. The digital experience had
+                  to make measuring head circumference intuitive, while keeping cart interactions
+                  instant and inventory counts strictly reliable.
                 </p>
               </div>
-              <div className="rounded-xl border border-zinc-800 bg-[#0e0e11] p-6 space-y-2">
-                <h4 className="text-sm font-bold text-zinc-100 flex items-center gap-2">
-                  <Code2 size={16} className="text-blue-400" />
-                  My Role & Architecture Ownership
+              <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-[#0e0e11] p-6 space-y-2">
+                <h4 className="text-sm font-bold text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
+                  <Code2 size={16} className="text-blue-500 dark:text-blue-400" />
+                  Engineering Ownership
                 </h4>
-                <p className="text-xs text-zinc-400 leading-relaxed">
-                  As an independent personal project, I owned end-to-end product architecture,
-                  component engineering, state management, UX flow design, and administrative
-                  tooling.
+                <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  As an independent product builder, I owned the entire development lifecycle:
+                  information architecture, UI design, client-side state architecture with Zustand,
+                  strict form validation using Zod and React Hook Form, and the administrative operations suite.
                 </p>
               </div>
             </div>
@@ -384,10 +365,10 @@ export default async function ProjectPage({
           <section className="section section--surface">
             <div className="container">
               <p className="eyebrow">STOREFRONT CAPABILITIES</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-100 mb-2">
-                The Customer Experience
+              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+                The Customer Storefront Experience
               </h2>
-              <p className="text-sm text-zinc-400 max-w-2xl mb-10">
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-2xl mb-10">
                 Thoughtfully crafted consumer touchpoints balancing cultural luxury with modern
                 conversion standards.
               </p>
@@ -396,16 +377,16 @@ export default async function ProjectPage({
                 {project.customerExperience?.map((item, idx) => (
                   <div
                     key={idx}
-                    className="rounded-xl border border-zinc-800 bg-[#09090b] p-6 flex flex-col justify-between hover:border-zinc-700 transition"
+                    className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-[#09090b] p-6 flex flex-col justify-between hover:border-zinc-300 dark:hover:border-zinc-700 transition"
                   >
                     <div>
-                      <span className="text-xs font-mono text-emerald-400 font-bold">
+                      <span className="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-bold">
                         0{idx + 1}
                       </span>
-                      <h3 className="text-base font-bold text-zinc-100 mt-2 mb-2">
+                      <h3 className="text-base font-bold text-zinc-900 dark:text-zinc-100 mt-2 mb-2">
                         {item.title}
                       </h3>
-                      <p className="text-xs text-zinc-400 leading-relaxed">
+                      <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
                         {item.description}
                       </p>
                     </div>
@@ -418,10 +399,10 @@ export default async function ProjectPage({
           {/* Admin Experience Deep-Dive */}
           <section className="section container">
             <p className="eyebrow">OPERATIONAL TOOLING</p>
-            <h2 className="text-2xl sm:text-3xl font-bold text-zinc-100 mb-2">
+            <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">
               The Back-Office Admin Experience
             </h2>
-            <p className="text-sm text-zinc-400 max-w-2xl mb-10">
+            <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-2xl mb-10">
               A comprehensive administrative suite empowering store managers to oversee
               products, stock levels, orders, and customer accounts.
             </p>
@@ -430,16 +411,16 @@ export default async function ProjectPage({
               {project.adminExperience?.map((item, idx) => (
                 <div
                   key={idx}
-                  className="rounded-xl border border-zinc-800 bg-[#0e0e11] p-6 flex flex-col justify-between hover:border-zinc-700 transition"
+                  className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50/80 dark:bg-[#0e0e11] p-6 flex flex-col justify-between hover:border-zinc-300 dark:hover:border-zinc-700 transition"
                 >
                   <div>
-                    <span className="text-xs font-mono text-cyan-400 font-bold">
+                    <span className="text-xs font-mono text-cyan-600 dark:text-cyan-400 font-bold">
                       ADMIN · 0{idx + 1}
                     </span>
-                    <h3 className="text-base font-bold text-zinc-100 mt-2 mb-2">
+                    <h3 className="text-base font-bold text-zinc-900 dark:text-zinc-100 mt-2 mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed">
+                    <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
                       {item.description}
                     </p>
                   </div>
@@ -447,49 +428,52 @@ export default async function ProjectPage({
               ))}
             </div>
 
-            {/* Walkthrough Scheduling Callout */}
-            <div className="mt-8 rounded-xl border border-cyan-500/25 bg-cyan-950/20 p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            {/* Live Operations Platform Callout */}
+            <div className="mt-8 rounded-xl border border-cyan-500/25 bg-cyan-50/80 dark:bg-cyan-950/20 p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="space-y-1">
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-cyan-400 flex items-center gap-1.5">
-                  <Lock size={13} />
-                  Operational Verification & Screen Walkthrough
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-cyan-700 dark:text-cyan-400 flex items-center gap-1.5">
+                  <CheckCircle2 size={13} />
+                  Complete Production Application Deployed
                 </span>
-                <p className="text-xs text-zinc-300 max-w-2xl leading-relaxed">
-                  The admin back-office is live in production. Because the system is prepared for commercial sale, credentials are restricted. I provide live, 1-on-1 walkthroughs via Google Meet or screen recording demonstrations to verify the catalog, stock ledger, and fulfillment pipeline in action.
+                <p className="text-xs text-zinc-700 dark:text-zinc-300 max-w-2xl leading-relaxed">
+                  Both customer shopping experiences and back-office store operations are fully deployed and interactive in production, showcasing the complete workflow from catalog management to customer order fulfillment.
                 </p>
               </div>
-              <a
-                href="mailto:ibrahimaliy19@gmail.com?subject=Fila%20Yoruba%20-%20Admin%20Dashboard%20Walkthrough%20Request&body=Hi%20Ibrahim%2C%20I%20would%20like%20to%20schedule%20a%20live%20walkthrough%20of%20the%20Fila%20Yoruba%20admin%20operations%20suite."
-                className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-zinc-950 font-semibold text-xs transition shrink-0"
-              >
-                <span>Request Admin Walkthrough</span>
-                <ArrowUpRight size={13} />
-              </a>
+              {project.live && (
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white dark:bg-cyan-500 dark:hover:bg-cyan-400 dark:text-zinc-950 font-semibold text-xs transition shrink-0"
+                >
+                  <span>Explore Live Platform</span>
+                  <ExternalLink size={13} />
+                </a>
+              )}
             </div>
           </section>
 
-          {/* E-Commerce System Design */}
+          {/* Key Engineering & Architecture Decisions */}
           <section className="section section--surface">
             <div className="container">
-              <p className="eyebrow">COMMERCE ARCHITECTURE</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-100 mb-2">
-                E-Commerce System Design
+              <p className="eyebrow">ENGINEERING DECISIONS</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+                Technical & Architecture Decisions
               </h2>
-              <p className="text-sm text-zinc-400 max-w-2xl mb-8">
-                Practical engineering decisions addressing inventory truth, race conditions,
-                and state integrity.
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-2xl mb-8">
+                Practical frontend decisions addressing state separation, sizing accuracy, form reliability, and inventory consistency.
               </p>
 
               <div className="system-design-grid">
                 {project.systemDesign?.map((item, idx) => (
-                  <div key={idx} className="system-design-card bg-[#09090b] border-zinc-800">
-                    <span className="text-[11px] font-mono font-bold text-emerald-400 uppercase tracking-wider">
+                  <div key={idx} className="system-design-card bg-white dark:bg-[#09090b] border-zinc-200 dark:border-zinc-800">
+                    <span className="text-[11px] font-mono font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">
                       {item.subtitle}
                     </span>
-                    <h3 className="text-base font-bold text-zinc-100 mt-1 mb-2">
+                    <h3 className="text-base font-bold text-zinc-900 dark:text-zinc-100 mt-1 mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed">
+                    <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
                       {item.description}
                     </p>
                   </div>
@@ -498,34 +482,64 @@ export default async function ProjectPage({
             </div>
           </section>
 
-          {/* Code Proof Section (Zustand, Reservation Engine, Order State Machine) */}
-          <CodeProofViewer />
-
-          {/* Case Study Process */}
+          {/* Development Progression */}
           <section className="section container">
             <p className="eyebrow">DEVELOPMENT PROGRESSION</p>
-            <h2 className="text-2xl sm:text-3xl font-bold text-zinc-100 mb-2">
-              Four-Stage Case Study Process
+            <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+              Four-Stage Project Evolution
             </h2>
-            <p className="text-sm text-zinc-400 max-w-2xl mb-8">
-              How the platform evolved systematically from an interface prototype to a
-              production-ready commerce engine.
+            <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-2xl mb-8">
+              How the platform evolved systematically from cultural identity concept to a production-ready commerce application.
             </p>
 
             <div className="stages-grid">
               {project.stages?.map((stage) => (
-                <div key={stage.number} className="stage-card bg-[#0e0e11] border-zinc-800">
-                  <span className="stage-number text-emerald-400">{stage.number}</span>
-                  <h3 className="text-sm font-bold text-zinc-100 mt-2 mb-2">
+                <div key={stage.number} className="stage-card bg-zinc-50/80 dark:bg-[#0e0e11] border-zinc-200 dark:border-zinc-800">
+                  <span className="stage-number text-emerald-600 dark:text-emerald-400">{stage.number}</span>
+                  <h3 className="text-sm font-bold text-zinc-900 dark:text-zinc-100 mt-2 mb-2">
                     {stage.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed">
+                  <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
                     {stage.description}
                   </p>
                 </div>
               ))}
             </div>
           </section>
+
+          {/* Key Learnings & Engineering Growth */}
+          {project.learnings && project.learnings.length > 0 && (
+            <section className="section section--surface border-t border-zinc-200 dark:border-zinc-800/60">
+              <div className="container">
+                <p className="eyebrow">ENGINEERING GROWTH</p>
+                <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+                  Key Learnings & Takeaways
+                </h2>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-2xl mb-8">
+                  Core engineering and product insights gained from building an artisanal e-commerce application.
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {project.learnings.map((learning, idx) => (
+                    <div
+                      key={idx}
+                      className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-[#09090b] p-6 flex flex-col justify-between"
+                    >
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 size={18} className="text-emerald-500 dark:text-emerald-400 shrink-0 mt-0.5" />
+                        <p className="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                          {learning}
+                        </p>
+                      </div>
+                      <span className="text-[10px] font-mono text-zinc-400 mt-4 block">
+                        TAKEAWAY · 0{idx + 1}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
         </>
       )}
 
@@ -821,13 +835,25 @@ export default async function ProjectPage({
         <section className="container py-16 border-t border-zinc-800/80">
           <p className="eyebrow">PROJECT LINKS</p>
           <div className="flex flex-wrap items-center gap-4 mt-4">
+            {project.live && (
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-xs font-semibold text-zinc-950 transition-colors"
+              >
+                {isFlagship ? "Explore Live Demo" : "Visit Live Project"} <ArrowUpRight size={14} />
+              </a>
+            )}
             {isFlagship ? (
               <a
-                href="mailto:ibrahimaliy19@gmail.com?subject=Fila%20Yoruba%20-%20Codebase%20Walkthrough%20Request&body=Hi%20Ibrahim%2C%20I%20would%20like%20to%20request%20a%20private%20codebase%20walkthrough%20of%20the%20Fila%20Yoruba%20e-commerce%20platform."
+                href="https://github.com/ibrahimaliy"
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-xs font-semibold text-zinc-100 transition-colors border border-zinc-700"
               >
-                <Lock size={15} className="text-amber-400" />
-                <span>Private Commercial Repo · Walkthrough on Request</span>
+                <Github size={15} />
+                <span>GitHub Profile</span>
                 <ArrowUpRight size={14} />
               </a>
             ) : (
@@ -845,16 +871,6 @@ export default async function ProjectPage({
                   <ArrowUpRight size={14} />
                 </a>
               )
-            )}
-            {project.live && (
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-xs font-semibold text-zinc-950 transition-colors"
-              >
-                Visit Live Project <ArrowUpRight size={14} />
-              </a>
             )}
             <Link
               href="/#work"

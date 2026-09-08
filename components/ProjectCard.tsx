@@ -37,7 +37,7 @@ export function ProjectCard({ project }: { project: Project }) {
                 rel="noreferrer"
                 className="button button--primary flex-1 sm:flex-initial text-xs sm:text-sm"
               >
-                <span>Live Storefront</span>
+                <span>Explore Live Demo</span>
                 <ExternalLink size={13} />
               </a>
             )}
@@ -50,26 +50,6 @@ export function ProjectCard({ project }: { project: Project }) {
             </Link>
           </div>
         </div>
-
-        {/* Commercial Platform Notice Callout */}
-        {project.liveNote && (
-          <div className="mb-5 sm:mb-6 rounded-lg border border-amber-500/25 bg-amber-500/10 dark:bg-amber-500/5 p-3.5 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-amber-800 dark:text-amber-200/90 leading-relaxed">
-            <div className="flex items-start gap-2.5">
-              <Info size={15} className="text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
-              <div>
-                <strong className="text-amber-900 dark:text-amber-300 font-semibold">Commercial Platform Notice: </strong>
-                {project.liveNote}
-              </div>
-            </div>
-            <a
-              href="mailto:ibrahimaliy19@gmail.com?subject=Fila%20Yoruba%20-%20Admin%20Dashboard%20Walkthrough%20Request&body=Hi%20Ibrahim%2C%20I%20would%20like%20to%20schedule%20a%20live%20walkthrough%20of%20the%20Fila%20Yoruba%20admin%20operations%20suite."
-              className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-md bg-amber-500/20 hover:bg-amber-500/30 text-amber-950 dark:text-amber-200 font-medium text-xs transition shrink-0 whitespace-nowrap border border-amber-500/30 self-start sm:self-auto"
-            >
-              <span>Request Admin Walkthrough</span>
-              <ArrowUpRight size={13} />
-            </a>
-          </div>
-        )}
 
         {/* Core Summary */}
         <p className="text-sm md:text-base text-zinc-700 dark:text-zinc-300 leading-relaxed max-w-3xl">

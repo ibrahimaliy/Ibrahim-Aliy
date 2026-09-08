@@ -9,9 +9,9 @@ export const projects: Project[] = [
     level: "flagship",
     role: "Frontend Developer / Product Builder",
     summary:
-      "A full-featured e-commerce platform for a premium Yoruba Fila brand, combining a responsive customer-facing storefront with integrated admin and back-office store operations.",
+      "A specialized e-commerce platform for premium handcrafted Yoruba headwear, pairing a responsive, culturally tailored storefront with a dedicated merchant operations console.",
     description:
-      "Fila Yoruba is an independent flagship e-commerce application designed to bridge authentic Yoruba artisanal fashion with contemporary digital commerce. The platform evolved from a clean customer catalog into a dual-sided commerce system comprising a high-converting storefront and a comprehensive back-office operations suite.",
+      "Fila Yoruba bridges traditional artisanal craftsmanship with modern digital commerce. Built as an independent flagship application, it features a complete customer purchasing journey—including bespoke head sizing guidance, style filtering, and persistent cart management—alongside a back-office administration suite for product management and order fulfillment.",
     tech: [
       "Next.js",
       "TypeScript",
@@ -22,149 +22,147 @@ export const projects: Project[] = [
       "Zod",
     ],
     contributions: [
-      "Designed and implemented responsive product discovery, collection browsing, wishlist, cart drawer, and multi-step checkout experiences.",
-      "Engineered back-office administrative modules for product catalog updates, inventory level tracking, customer records, and order fulfillment status.",
-      "Architected clean separation of client UI state (Zustand) and asynchronous server state (TanStack React Query).",
-      "Implemented strict input validation and type safety using Zod and React Hook Form across all customer and administrative touchpoints.",
+      "Engineered the full responsive storefront with collection browsing, style filtering, and custom headwear sizing guides.",
+      "Built the persistent slide-over cart drawer with real-time subtotal calculation and client-side quantity management.",
+      "Developed a multi-step checkout flow featuring address and input validation using React Hook Form and Zod.",
+      "Created the merchant administration suite for catalog creation, inventory tracking, and order fulfillment monitoring.",
     ],
     customerExperience: [
       {
-        title: "Curated Collections & Product Browsing",
+        title: "Curated Style Catalog & Fabric Details",
         description:
-          "High-contrast editorial layouts showcasing traditional Yoruba fila styles (Gobi, Abeti Aja, Kente, Damask) with high-res galleries and fabric details.",
+          "Editorial showcases highlighting traditional Yoruba fila styles (Gobi, Abeti Aja, Kente, Damask) with high-resolution imagery and fabric texture previews.",
       },
       {
-        title: "Instant Search & Faceted Filtering",
+        title: "Instant Style & Size Filtering",
         description:
-          "Fast, client-side filtering by style, traditional fabric, cap size, color palette, and real-time in-stock availability.",
+          "Client-side filtering by style, fabric type, cap circumference, and in-stock status for rapid item discovery.",
       },
       {
-        title: "Product Detail & Accurate Sizing",
+        title: "Head Circumference Sizing Guide",
         description:
-          "Dedicated product pages featuring comprehensive head measurement guides, size selection, stock urgency counters, and styling recommendations.",
+          "Interactive sizing assistance translating head circumference measurements (in inches) to exact cap fits, addressing the non-elastic nature of traditional headwear.",
       },
       {
-        title: "Slide-Over Cart & Wishlist",
+        title: "Slide-Over Cart & Persistent State",
         description:
-          "Persistent client-side cart drawer with item quantity controls, instant subtotal calculation, free-shipping progress indicators, and wishlist save.",
+          "Lightweight slide-over cart drawer with instant quantity adjustments, stock cap limits, subtotal summaries, and local persistence.",
       },
       {
-        title: "Multi-Step Checkout & Payment Flow",
+        title: "Multi-Step Checkout Flow",
         description:
-          "Frictionless checkout experience with address autocomplete, order summary breakdown, delivery method selection, and secure payment state handling.",
+          "Structured customer checkout with validated delivery fields, order breakdown, shipping method selection, and Paystack payment handling.",
       },
       {
-        title: "Responsive Navigation & Mobile First",
+        title: "Mobile-First Responsive Interface",
         description:
-          "Fully optimized mobile browsing experience with thumb-friendly touch targets, sticky quick-action bars, and seamless sheet menus.",
+          "Optimized touch navigation with thumb-friendly controls, sticky action bars, and fast load times on varying network speeds.",
       },
     ],
     adminExperience: [
       {
-        title: "Product & Catalog Management",
+        title: "Catalog & Product Management",
         description:
-          "Complete administrative interface for creating, editing, categorizing, and publishing fila items with image management and pricing.",
+          "Administrative tools to add, edit, categorize, and price fila items with image management and fabric specifications.",
       },
       {
-        title: "Inventory & Stock Tracking",
+        title: "Inventory Level Tracking",
         description:
-          "Granular SKU-level stock counters, low-stock visual alerts, and manual replenishment adjustments to eliminate overselling.",
+          "SKU-level stock tracking with low-stock visual flags and manual adjustment tools to prevent overselling.",
       },
       {
-        title: "Order Lifecycle & Fulfillment",
+        title: "Order Fulfillment Monitoring",
         description:
-          "Real-time order tracking dashboard supporting status transitions (Pending, Paid, Processing, Shipped, Delivered) and tracking details.",
+          "Clear order lifecycle tracking across linear stages (Pending, Paid, Processing, Shipped, Delivered) with customer shipping details.",
       },
       {
-        title: "Customer Directory & Order History",
+        title: "Customer Directory & History",
         description:
-          "Unified customer profiles linking contact information, order histories, total spend metrics, and shipping addresses.",
+          "Searchable customer profiles summarizing contact records, past orders, and total purchases for operational support.",
       },
       {
-        title: "Sales Operations & Store Metrics",
+        title: "Operational Sales Overview",
         description:
-          "Daily operational summaries displaying active order counts, top-performing fila styles, revenue trends, and fulfillment queues.",
+          "Daily business snapshot displaying active orders, best-selling cap styles, and fulfillment queues.",
       },
       {
-        title: "Administrative Workflow Controls",
+        title: "Role-Ready Store Controls",
         description:
-          "Role-ready administrative controls for promotional discount codes, manual status overrides, and operational notes.",
+          "Configurable operational toggles for shipping rates, discount codes, and order notes.",
       },
     ],
     systemDesign: [
       {
-        title: "Inventory Integrity",
-        subtitle: "Reservations vs Physical Stock",
+        title: "Client State & Server Synchronization",
+        subtitle: "Architecture Decision",
         description:
-          "Checkout reservations prevent stock overselling without prematurely mutating physical inventory before payment authorization.",
+          "Separated transient client UI interactions (slide-over cart, drawer toggles, active filters) in Zustand from asynchronous server data to maintain sub-second UI responsiveness.",
       },
       {
-        title: "Payment Truth",
-        subtitle: "Immutable Ledger Flow",
+        title: "Cultural Sizing Precision",
+        subtitle: "Product UX",
         description:
-          "Payment records maintain immutable ledger state regardless of subsequent inventory adjustments, fulfillment changes, or order updates.",
+          "Integrated precise head circumference guidance into the product selection step, solving the return-rate challenge inherent in non-elastic traditional headwear.",
       },
       {
-        title: "Refund Separation",
-        subtitle: "Accounting Accuracy",
+        title: "Defensive Inventory Bounds",
+        subtitle: "Stock Integrity",
         description:
-          "Refund processes are modeled as independent financial transactions rather than simple order state cancellations to preserve audit integrity.",
+          "Constrained cart increments against real-time available SKU stock to ensure shoppers cannot add or checkout more units than currently available in inventory.",
       },
       {
-        title: "Order Lifecycle",
-        subtitle: "Finite State Machine",
+        title: "Strict Schema Form Validation",
+        subtitle: "Data Reliability",
         description:
-          "Strict linear state transitions (Pending → Confirmed → Processing → Shipped → Delivered) avoid illegal status mutations.",
+          "Leveraged Zod schemas paired with React Hook Form to guarantee accurate delivery addresses, telephone numbers, and delivery preferences prior to payment authorization.",
       },
       {
-        title: "Concurrency Guardrails",
-        subtitle: "Race Condition Defense",
+        title: "Linear Order Lifecycle Progression",
+        subtitle: "Operational Clarity",
         description:
-          "Optimistic UI updates coupled with server-side validation protect against race conditions when multiple shoppers buy limited-run items.",
+          "Modeled order fulfillment as an explicit sequential pipeline (Pending → Confirmed → Shipped → Delivered), avoiding ambiguous or contradictory fulfillment states.",
       },
       {
-        title: "Customer Resolution",
-        subtitle: "Guest to Auth Continuity",
+        title: "Safe Local Persistence & Hydration",
+        subtitle: "Client Experience",
         description:
-          "Seamless continuity between guest shopping cart sessions and authenticated user profiles upon checkout or account registration.",
+          "Persisted cart items and preferences in localStorage with safe client hydration, preventing cart loss across page reloads without causing SSR hydration mismatches.",
       },
     ],
     stages: [
       {
         number: "01",
-        title: "Prototype & Storefront Foundation",
+        title: "Visual Identity & Style Catalog",
         description:
-          "Explored the luxury Yoruba cultural aesthetic, established visual identity, typography, and built the core catalog browsing experience.",
+          "Designed the editorial aesthetic tailored to luxury Yoruba headwear, establishing typography, color hierarchy, and high-resolution variant showcases.",
       },
       {
         number: "02",
-        title: "Product Systems & Cart Engine",
+        title: "Sizing Guide & Cart Architecture",
         description:
-          "Built persistent cart state, wishlist storage, checkout workflows, and foundational back-office order and product data models.",
+          "Built the interactive head-measurement sizing selector and the persistent slide-over cart drawer with instant subtotal updates.",
       },
       {
         number: "03",
-        title: "Commerce Architecture & State Synchronization",
+        title: "Multi-Step Checkout & Validation",
         description:
-          "Implemented Zustand for client state, TanStack Query for server caching, and hardened stock reservation and payment state flows.",
+          "Implemented the checkout flow with address validation via React Hook Form and Zod, delivery fee calculation, and payment state handling.",
       },
       {
         number: "04",
-        title: "Production Readiness & Operations Suite",
+        title: "Merchant Operations Suite",
         description:
-          "Delivered full administrative back-office, comprehensive form validation, responsive polish, and performance optimizations.",
+          "Developed the administrative dashboard enabling store managers to add/edit products, monitor inventory levels, and process order fulfillment.",
       },
     ],
     learnings: [
-      "Designing e-commerce systems requires treating operational back-office tooling with the same UX rigor as customer storefronts.",
-      "Clean separation of client cache (TanStack Query) and local interaction state (Zustand) prevents state synchronization drift.",
-      "Defensive stock reservation patterns protect business integrity during peak traffic.",
+      "Artisanal and traditional garments require specialized e-commerce UX; incorporating head circumference measurement directly into the purchasing flow eliminates sizing confusion.",
+      "Keeping client cart state in Zustand while caching server data separately ensures the shopping experience stays fast even on mobile network connections.",
+      "A commerce platform is only complete when merchant tooling matches storefront polish; building intuitive back-office order tracking is essential for actual operations.",
     ],
     live: "https://filayoruba-theta.vercel.app/",
-    liveNote:
-      "The customer storefront is live. The admin dashboard is live in production, but login credentials are intentionally restricted because the platform is being prepared for commercial sale. A live walkthrough/demo is readily available upon request to showcase the dashboard and its full operational capabilities.",
     isPrivateRepo: true,
-    githubLabel: "Private Commercial Repo · Walkthrough on Request",
+    githubLabel: "Private Repository",
     github: "https://github.com/ibrahimaliy",
     accent: "green",
     featured: true,
