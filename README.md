@@ -53,15 +53,15 @@
 
 ## 📂 Featured Projects Showcase
 
-| Project | Type | Architecture / Role | Live Preview |
+| Project | Type | Architecture / Role | Links |
 | :--- | :--- | :--- | :--- |
-| **Fila Yoruba** | Personal Flagship | Full-stack e-commerce architecture, Zustand cart state, dual-state caching | [Storefront](https://filayoruba-theta.vercel.app/) |
-| **Attendance Management System** | Personal Featured | Multi-role portal (`/student`, `/lecturer`, `/admin`), real-time attendance stats | [Live Portal](https://attendance-management-system-five-kappa.vercel.app) |
-| **Music Player** | Personal Build | Web Audio API, playlist state machine, progress tracking | [Live Demo](https://music-player-five-liart.vercel.app/) |
-| **Memory Card Game** | Personal Build | Dynamic grid shuffling, turn & match evaluation logic | [Live Demo](https://memory-card-psi-two.vercel.app/) |
-| **Weather App** | Personal Build | Asynchronous REST geocoding & Open-Meteo forecasts | [Live Demo](https://weather-app-two-ruddy-23.vercel.app/) |
-| **Notepad App** | Personal Build | LocalStorage persistence, clean note management UI | [Live Demo](https://react-app-drab-one-37.vercel.app/) |
-| **Outcess Corporate Web** | Professional (Team) | Corporate digital service pages, cross-browser responsive testing | [Live Site](https://outcess.com) |
+| **Fila Yoruba** | Personal Flagship | Full-stack e-commerce architecture, Zustand cart state, dual-state caching | [Storefront](https://filayoruba-demo.vercel.app/) · [GitHub](https://github.com/ibrahimaliy/filayoruba-demo) |
+| **Attendance Management System** | Personal Featured | Multi-role portal (`/student`, `/lecturer`, `/admin`), real-time attendance stats | [Live Portal](https://attendance-management-system-five-kappa.vercel.app) · [GitHub](https://github.com/ibrahimaliy/ATTENDANCE-MANAGEMENT-SYSTEM) |
+| **Music Player** | Personal Build | Web Audio API, playlist state machine, progress tracking | [Live Demo](https://music-player-five-liart.vercel.app/) · [GitHub](https://github.com/ibrahimaliy/MUSIC-PLAYER) |
+| **Memory Card Game** | Personal Build | Dynamic grid shuffling, turn & match evaluation logic | [Live Demo](https://memory-card-psi-two.vercel.app/) · [GitHub](https://github.com/ibrahimaliy/MEMORY-CARD) |
+| **Weather App** | Personal Build | Asynchronous REST geocoding & Open-Meteo forecasts | [Live Demo](https://weather-app-two-ruddy-23.vercel.app/) · [GitHub](https://github.com/ibrahimaliy/WEATHER-APP) |
+| **Notepad App** | Personal Build | LocalStorage persistence, clean note management UI | [Live Demo](https://react-app-drab-one-37.vercel.app/) · [GitHub](https://github.com/ibrahimaliy/React-App) |
+| **Outcess Corporate Web** | Professional (Team) | Corporate digital service pages, cross-browser responsive testing | [Live Site](https://outcess.com) · [GitHub](https://github.com/Outcess-Solutions-Nigeria-Limited/outcess-web) |
 
 ---
 

@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
 import { TechChip } from "./TechChip";
 import { compactPersonalProjects } from "@/data/projects";
 
@@ -59,6 +59,18 @@ export function PersonalProjectsList() {
                 >
                   <span>Open live app</span>
                   <ExternalLink size={12} />
+                </a>
+              )}
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1 text-xs text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-200 transition font-mono"
+                  title="View GitHub Repository"
+                >
+                  <Github size={12} />
+                  <span>Code</span>
                 </a>
               )}
               <Link

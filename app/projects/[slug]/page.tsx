@@ -157,30 +157,17 @@ export default async function ProjectPage({
               <ExternalLink size={13} />
             </a>
           )}
-          {isFlagship ? (
+          {project.github && (
             <a
-              href="https://github.com/ibrahimaliy"
+              href={project.github}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-800 text-xs font-mono text-zinc-700 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-800/80 hover:bg-zinc-700 text-xs font-semibold text-zinc-200 transition-colors border border-zinc-700"
             >
               <Github size={14} />
-              <span>GitHub Profile</span>
+              <span>{isProfessional ? "Organization Repository" : "View Source Code"}</span>
               <ArrowUpRight size={13} />
             </a>
-          ) : (
-            project.github && (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-800/80 hover:bg-zinc-700 text-xs font-semibold text-zinc-200 transition-colors border border-zinc-700"
-              >
-                <Github size={14} />
-                <span>{isProfessional ? "Organization Repository" : "View Source Code"}</span>
-                <ArrowUpRight size={13} />
-              </a>
-            )
           )}
         </div>
 
@@ -845,32 +832,21 @@ export default async function ProjectPage({
                 {isFlagship ? "Explore Live Demo" : "Visit Live Project"} <ArrowUpRight size={14} />
               </a>
             )}
-            {isFlagship ? (
+            {project.github && (
               <a
-                href="https://github.com/ibrahimaliy"
+                href={project.github}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-xs font-semibold text-zinc-100 transition-colors border border-zinc-700"
               >
                 <Github size={15} />
-                <span>GitHub Profile</span>
-                <ArrowUpRight size={14} />
-              </a>
-            ) : (
-              project.github && (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-xs font-semibold text-zinc-100 transition-colors border border-zinc-700"
-                >
-                  <Github size={15} />
+                <span>
                   {isProfessional
                     ? "Organization Repository (Outcess Solutions)"
                     : "View GitHub Repository"}
-                  <ArrowUpRight size={14} />
-                </a>
-              )
+                </span>
+                <ArrowUpRight size={14} />
+              </a>
             )}
             <Link
               href="/#work"

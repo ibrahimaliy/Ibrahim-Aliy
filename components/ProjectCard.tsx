@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight, ShieldCheck, Cpu, Layout, ExternalLink, Info } from "lucide-react";
+import { ArrowUpRight, ShieldCheck, Cpu, Layout, ExternalLink, Github } from "lucide-react";
 import { Project } from "@/types/project";
 import { ProjectBadge } from "./ProjectBadge";
 import { TechChip } from "./TechChip";
@@ -39,6 +39,17 @@ export function ProjectCard({ project }: { project: Project }) {
               >
                 <span>Explore Live Demo</span>
                 <ExternalLink size={13} />
+              </a>
+            )}
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className="button button--secondary flex-1 sm:flex-initial text-xs sm:text-sm"
+              >
+                <Github size={13} />
+                <span>Code</span>
               </a>
             )}
             <Link
@@ -135,6 +146,17 @@ export function ProjectCard({ project }: { project: Project }) {
               >
                 <span>Open Live Portal</span>
                 <ExternalLink size={13} />
+              </a>
+            )}
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className="button button--secondary flex-1 sm:flex-initial text-xs sm:text-sm"
+              >
+                <Github size={13} />
+                <span>Code</span>
               </a>
             )}
             <Link
