@@ -157,15 +157,15 @@ export default async function ProjectPage({
               <ExternalLink size={13} />
             </a>
           )}
-          {project.github && (
+          {!isProfessional && project.github && (
             <a
               href={project.github}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-800/80 hover:bg-zinc-700 text-xs font-semibold text-zinc-200 transition-colors border border-zinc-700"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-800 dark:bg-zinc-800/80 dark:hover:bg-zinc-700 text-xs font-semibold dark:text-zinc-200 transition-colors border border-zinc-200 dark:border-zinc-700"
             >
               <Github size={14} />
-              <span>{isProfessional ? "Organization Repository" : "View Source Code"}</span>
+              <span>View Source Code</span>
               <ArrowUpRight size={13} />
             </a>
           )}
@@ -173,11 +173,11 @@ export default async function ProjectPage({
 
         {/* Live Operational Notice Callout (if applicable) */}
         {!isFlagship && project.liveNote && (
-          <div className="mt-6 rounded-xl border border-amber-500/25 bg-amber-500/5 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-amber-200/90 leading-relaxed">
+          <div className="mt-6 rounded-xl border border-amber-500/30 bg-amber-500/10 dark:bg-amber-500/5 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-amber-900 dark:text-amber-200/90 leading-relaxed">
             <div className="flex items-start gap-3">
-              <Info size={16} className="text-amber-400 shrink-0 mt-0.5" />
+              <Info size={16} className="text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
               <div>
-                <strong className="text-amber-300 font-semibold">Live Operational Notice: </strong>
+                <strong className="text-amber-950 dark:text-amber-300 font-semibold">Live Operational Notice: </strong>
                 {project.liveNote}
               </div>
             </div>
@@ -186,12 +186,12 @@ export default async function ProjectPage({
 
         {/* Live Role Portal Routes */}
         {project.portalRoutes && (
-          <div className="mt-6 rounded-xl border border-blue-500/25 bg-blue-500/5 p-4">
+          <div className="mt-6 rounded-xl border border-blue-500/25 bg-blue-500/10 dark:bg-blue-500/5 p-4">
             <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
-              <span className="text-xs font-mono font-semibold text-blue-300 flex items-center gap-1.5">
+              <span className="text-xs font-mono font-semibold text-blue-700 dark:text-blue-300 flex items-center gap-1.5">
                 <Workflow size={13} /> Direct Live Role Portals
               </span>
-              <span className="text-[11px] text-zinc-400 font-mono">
+              <span className="text-[11px] text-zinc-500 dark:text-zinc-400 font-mono">
                 Access route directly without manual URL typing
               </span>
             </div>
@@ -202,11 +202,11 @@ export default async function ProjectPage({
                   href={route.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-blue-500/30 bg-blue-500/10 hover:bg-blue-500/20 text-xs text-blue-200 font-mono transition"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-blue-500/30 bg-blue-500/10 hover:bg-blue-500/20 text-xs text-blue-800 dark:text-blue-200 font-mono transition"
                 >
                   <span>{route.label}</span>
-                  <span className="text-[10px] text-blue-400 font-bold">{route.path}</span>
-                  <ExternalLink size={11} className="text-blue-400" />
+                  <span className="text-[10px] text-blue-600 dark:text-blue-400 font-bold">{route.path}</span>
+                  <ExternalLink size={11} className="text-blue-600 dark:text-blue-400" />
                 </a>
               ))}
             </div>
@@ -536,58 +536,58 @@ export default async function ProjectPage({
       {isAttendance && (
         <>
           <section className="container py-12">
-            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-blue-400 mb-4">
+            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-4">
               <Workflow size={14} />
               <span>ACADEMIC PORTAL ARCHITECTURE · 3-TIER ROLE ACCESS</span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="rounded-xl border border-zinc-800 bg-[#0e0e11] p-6">
-                <span className="text-[11px] font-mono font-bold text-blue-400 uppercase">Role 01</span>
-                <h3 className="text-base font-bold text-zinc-100 mt-2 mb-2">Institution Admin</h3>
-                <p className="text-xs text-zinc-400 leading-relaxed">
+              <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50/80 dark:bg-[#0e0e11] p-6">
+                <span className="text-[11px] font-mono font-bold text-blue-600 dark:text-blue-400 uppercase">Role 01</span>
+                <h3 className="text-base font-bold text-zinc-900 dark:text-zinc-100 mt-2 mb-2">Institution Admin</h3>
+                <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
                   Academic session setup, department registry, lecturer course assignments, and institution-wide compliance monitoring.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-zinc-800 bg-[#0e0e11] p-6">
-                <span className="text-[11px] font-mono font-bold text-emerald-400 uppercase">Role 02</span>
-                <h3 className="text-base font-bold text-zinc-100 mt-2 mb-2">Course Lecturer</h3>
-                <p className="text-xs text-zinc-400 leading-relaxed">
+              <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50/80 dark:bg-[#0e0e11] p-6">
+                <span className="text-[11px] font-mono font-bold text-emerald-600 dark:text-emerald-400 uppercase">Role 02</span>
+                <h3 className="text-base font-bold text-zinc-900 dark:text-zinc-100 mt-2 mb-2">Course Lecturer</h3>
+                <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
                   Fast lecture check-in, real-time student roll call, manual override for authorized absences, and exportable course sheets.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-zinc-800 bg-[#0e0e11] p-6">
-                <span className="text-[11px] font-mono font-bold text-amber-400 uppercase">Role 03</span>
-                <h3 className="text-base font-bold text-zinc-100 mt-2 mb-2">Undergraduate Student</h3>
-                <p className="text-xs text-zinc-400 leading-relaxed">
+              <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50/80 dark:bg-[#0e0e11] p-6">
+                <span className="text-[11px] font-mono font-bold text-amber-600 dark:text-amber-400 uppercase">Role 03</span>
+                <h3 className="text-base font-bold text-zinc-900 dark:text-zinc-100 mt-2 mb-2">Undergraduate Student</h3>
+                <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
                   Transparent personal attendance progress, low-attendance alert thresholds, and automated exam clearance status.
                 </p>
               </div>
             </div>
           </section>
 
-          <section className="container case-grid border-t border-zinc-800/60">
+          <section className="container case-grid border-t border-zinc-200 dark:border-zinc-800/60">
             <div>
               <p className="eyebrow">PROJECT OVERVIEW</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-100 tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">
                 Solving academic roll call through role-based clarity.
               </h2>
             </div>
             <div className="space-y-6">
-              <p className="case-lead text-zinc-300">
+              <p className="case-lead text-zinc-700 dark:text-zinc-300">
                 Manual paper attendance sheets in tertiary institutions often lead to lost records,
                 proxy attendance, and tedious end-of-semester computations. The Attendance Management
                 System replaces this with a structured, role-based web application tailored for
                 administrators, course lecturers, and students.
               </p>
-              <div className="rounded-xl border border-zinc-800 bg-[#0e0e11] p-6 space-y-2">
-                <h4 className="text-sm font-bold text-zinc-100 flex items-center gap-2">
-                  <Code2 size={16} className="text-blue-400" />
+              <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-[#0e0e11] p-6 space-y-2">
+                <h4 className="text-sm font-bold text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
+                  <Code2 size={16} className="text-blue-600 dark:text-blue-400" />
                   Role-Based Architecture & Route Guards
                 </h4>
-                <p className="text-xs text-zinc-400 leading-relaxed">
+                <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
                   The interface adapts responsively to the authenticated user's permissions,
                   providing administrators with institution-wide metrics, lecturers with fast
                   session check-in tools, and students with personal attendance thresholds.
@@ -599,10 +599,10 @@ export default async function ProjectPage({
           <section className="section section--surface">
             <div className="container">
               <p className="eyebrow">FUNCTIONAL MODULES</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-100 mb-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">
                 Role-Based Experiences
               </h2>
-              <p className="text-sm text-zinc-400 max-w-2xl mb-10">
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-2xl mb-10">
                 Distinct workflows designed specifically for each stakeholder in the academic
                 ecosystem.
               </p>
@@ -611,15 +611,15 @@ export default async function ProjectPage({
                 {project.features?.map((feature, idx) => (
                   <div
                     key={idx}
-                    className="rounded-xl border border-zinc-800 bg-[#09090b] p-6 border-l-4 border-l-blue-500"
+                    className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-[#09090b] p-6 border-l-4 border-l-blue-500"
                   >
-                    <span className="text-xs font-mono text-blue-400 font-bold">
+                    <span className="text-xs font-mono text-blue-600 dark:text-blue-400 font-bold">
                       PORTAL MODULE · 0{idx + 1}
                     </span>
-                    <h3 className="text-base font-bold text-zinc-100 mt-2 mb-2">
+                    <h3 className="text-base font-bold text-zinc-900 dark:text-zinc-100 mt-2 mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed">
+                    <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
@@ -637,22 +637,22 @@ export default async function ProjectPage({
         <>
           {/* Transparent Enterprise Collaboration Header */}
           <section className="container py-10">
-            <div className="rounded-xl border border-cyan-500/20 bg-cyan-950/20 p-6 md:p-8">
+            <div className="rounded-xl border border-cyan-500/25 bg-cyan-50/80 dark:bg-cyan-950/20 p-6 md:p-8">
               <div className="flex items-start gap-4">
-                <Building2 size={24} className="text-cyan-400 shrink-0 mt-1" />
+                <Building2 size={24} className="text-cyan-600 dark:text-cyan-400 shrink-0 mt-1" />
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-cyan-400">
+                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-cyan-700 dark:text-cyan-400">
                       ENTERPRISE COLLABORATION · OUTCESS SOLUTIONS
                     </span>
                     <span className="text-xs text-zinc-500 font-mono">
                       · Frontend Developer Intern
                     </span>
                   </div>
-                  <h2 className="text-xl md:text-2xl font-bold text-zinc-100">
+                  <h2 className="text-xl md:text-2xl font-bold text-zinc-900 dark:text-zinc-100">
                     {project.title}
                   </h2>
-                  <p className="text-xs md:text-sm text-zinc-400 leading-relaxed max-w-3xl">
+                  <p className="text-xs md:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-3xl">
                     <strong>Project Ownership Note:</strong> This project belongs to Outcess Solutions.
                     This case study documents my specific frontend engineering contributions,
                     component deliverables, and team collaboration within a shared enterprise repository,
@@ -664,20 +664,20 @@ export default async function ProjectPage({
           </section>
 
           {/* Project Overview */}
-          <section className="container case-grid border-t border-zinc-800/60">
+          <section className="container case-grid border-t border-zinc-200 dark:border-zinc-800/60">
             <div>
               <p className="eyebrow">ORGANIZATION CONTEXT</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-100 tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">
                 Enterprise Product Engineering
               </h2>
-              <div className="mt-4 flex items-center gap-2 text-xs text-cyan-400 font-mono">
+              <div className="mt-4 flex items-center gap-2 text-xs text-cyan-600 dark:text-cyan-400 font-mono">
                 <Building2 size={14} />
                 <span>Outcess Solutions · Production Environment</span>
               </div>
             </div>
 
             <div className="space-y-6">
-              <p className="case-lead text-zinc-300">{project.description}</p>
+              <p className="case-lead text-zinc-700 dark:text-zinc-300">{project.description}</p>
             </div>
           </section>
 
@@ -685,18 +685,18 @@ export default async function ProjectPage({
           <section className="section section--surface">
             <div className="container">
               <p className="eyebrow">TEAM WORKFLOW</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-100 mb-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">
                 My Contribution & Work Completed
               </h2>
-              <p className="text-sm text-zinc-400 max-w-2xl mb-8">
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-2xl mb-8">
                 Factual breakdown of frontend responsibilities, peer collaboration, and deliverables.
               </p>
 
               <div className="contribution-grid">
                 {project.contributions.map((item, idx) => (
-                  <article key={idx} className="contribution-card bg-[#09090b] border-zinc-800">
-                    <span className="text-cyan-400">CONTRIBUTION · 0{idx + 1}</span>
-                    <p className="text-zinc-300">{item}</p>
+                  <article key={idx} className="contribution-card bg-white dark:bg-[#09090b] border-zinc-200 dark:border-zinc-800">
+                    <span className="text-cyan-600 dark:text-cyan-400">CONTRIBUTION · 0{idx + 1}</span>
+                    <p className="text-zinc-700 dark:text-zinc-300">{item}</p>
                   </article>
                 ))}
               </div>
@@ -707,22 +707,22 @@ export default async function ProjectPage({
           {project.features && project.features.length > 0 && (
             <section className="section container">
               <p className="eyebrow">DELIVERABLES</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-100 mb-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">
                 Key Technical Deliverables
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                 {project.features.map((feature, idx) => (
                   <div
                     key={idx}
-                    className="rounded-xl border border-zinc-800 bg-[#0e0e11] p-6"
+                    className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50/80 dark:bg-[#0e0e11] p-6"
                   >
-                    <span className="text-xs font-mono text-cyan-400 font-bold">
+                    <span className="text-xs font-mono text-cyan-600 dark:text-cyan-400 font-bold">
                       FEATURE · 0{idx + 1}
                     </span>
-                    <h3 className="text-base font-bold text-zinc-100 mt-1 mb-2">
+                    <h3 className="text-base font-bold text-zinc-900 dark:text-zinc-100 mt-1 mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed">
+                    <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
@@ -736,17 +736,17 @@ export default async function ProjectPage({
             <section className="section section--surface">
               <div className="container">
                 <p className="eyebrow">ENGINEERING GROWTH</p>
-                <h2 className="text-2xl sm:text-3xl font-bold text-zinc-100 mb-6">
+                <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-6">
                   What I Learned & Engineering Insights
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {project.learnings.map((learning, idx) => (
                     <div
                       key={idx}
-                      className="rounded-xl border border-zinc-800 bg-[#09090b] p-5 flex items-start gap-3"
+                      className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-[#09090b] p-5 flex items-start gap-3"
                     >
-                      <CheckCircle2 size={16} className="text-emerald-400 shrink-0 mt-0.5" />
-                      <p className="text-xs text-zinc-300 leading-relaxed">
+                      <CheckCircle2 size={16} className="text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+                      <p className="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">
                         {learning}
                       </p>
                     </div>
@@ -763,30 +763,30 @@ export default async function ProjectPage({
       {/* ========================================================================= */}
       {!isFlagship && !isAttendance && !isProfessional && (
         <>
-          <section className="container case-grid border-t border-zinc-800/60">
+          <section className="container case-grid border-t border-zinc-200 dark:border-zinc-800/60">
             <div>
               <p className="eyebrow">PERSONAL PROJECT</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-100 tracking-tight">{project.title}</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">{project.title}</h2>
               <span className="text-xs text-zinc-500 font-mono mt-2 block">
                 Frontend Practice & Experimentation
               </span>
             </div>
             <div>
-              <p className="case-lead text-zinc-300">{project.description}</p>
+              <p className="case-lead text-zinc-700 dark:text-zinc-300">{project.description}</p>
             </div>
           </section>
 
           <section className="section section--surface">
             <div className="container">
               <p className="eyebrow">IMPLEMENTATION</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-100 mb-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">
                 What I Built
               </h2>
               <div className="contribution-grid">
                 {project.contributions.map((item, idx) => (
-                  <article key={idx} className="contribution-card bg-[#09090b] border-zinc-800">
-                    <span className="text-emerald-400">FEATURE · 0{idx + 1}</span>
-                    <p className="text-zinc-300">{item}</p>
+                  <article key={idx} className="contribution-card bg-white dark:bg-[#09090b] border-zinc-200 dark:border-zinc-800">
+                    <span className="text-emerald-600 dark:text-emerald-400">FEATURE · 0{idx + 1}</span>
+                    <p className="text-zinc-700 dark:text-zinc-300">{item}</p>
                   </article>
                 ))}
               </div>
@@ -796,16 +796,16 @@ export default async function ProjectPage({
           {project.highlights && (
             <section className="section container">
               <p className="eyebrow">KEY HIGHLIGHTS</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-100 mb-6">
+              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-6">
                 Technical Capabilities
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {project.highlights.map((highlight, idx) => (
                   <div
                     key={idx}
-                    className="rounded-xl border border-zinc-800 bg-[#0e0e11] p-4 flex items-center gap-3 text-xs text-zinc-300"
+                    className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50/80 dark:bg-[#0e0e11] p-4 flex items-center gap-3 text-xs text-zinc-700 dark:text-zinc-300"
                   >
-                    <CheckCircle2 size={15} className="text-emerald-400 shrink-0" />
+                    <CheckCircle2 size={15} className="text-emerald-600 dark:text-emerald-400 shrink-0" />
                     <span>{highlight}</span>
                   </div>
                 ))}
@@ -819,7 +819,7 @@ export default async function ProjectPage({
       {/* REPOSITORY & PROJECT LINKS (FOOTER CTA)                                   */}
       {/* ========================================================================= */}
       {(project.github || project.live) && (
-        <section className="container py-16 border-t border-zinc-800/80">
+        <section className="container py-16 border-t border-zinc-200 dark:border-zinc-800/80">
           <p className="eyebrow">PROJECT LINKS</p>
           <div className="flex flex-wrap items-center gap-4 mt-4">
             {project.live && (
@@ -827,30 +827,26 @@ export default async function ProjectPage({
                 href={project.live}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-xs font-semibold text-zinc-950 transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-xs font-semibold text-zinc-950 transition-colors shadow-sm"
               >
                 {isFlagship ? "Explore Live Demo" : "Visit Live Project"} <ArrowUpRight size={14} />
               </a>
             )}
-            {project.github && (
+            {!isProfessional && project.github && (
               <a
                 href={project.github}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-xs font-semibold text-zinc-100 transition-colors border border-zinc-700"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-800 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-xs font-semibold dark:text-zinc-100 transition-colors border border-zinc-200 dark:border-zinc-700"
               >
                 <Github size={15} />
-                <span>
-                  {isProfessional
-                    ? "Organization Repository (Outcess Solutions)"
-                    : "View GitHub Repository"}
-                </span>
+                <span>View GitHub Repository</span>
                 <ArrowUpRight size={14} />
               </a>
             )}
             <Link
               href="/#work"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-transparent hover:bg-zinc-800/60 text-xs font-semibold text-zinc-400 hover:text-zinc-200 transition-colors border border-zinc-800"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-transparent hover:bg-zinc-100 dark:hover:bg-zinc-800/60 text-xs font-semibold text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors border border-zinc-200 dark:border-zinc-800"
             >
               Back to all projects
             </Link>

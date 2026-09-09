@@ -382,8 +382,6 @@ export const projects: Project[] = [
       "Working inside a production enterprise codebase with pre-existing architecture and team coding standards.",
       "Coordinating closely with another frontend developer through code reviews and pair debugging.",
     ],
-    github:
-      "https://github.com/Outcess-Solutions-Nigeria-Limited/omnichannel-support-lebara",
     accent: "cyan",
   },
   {
@@ -427,8 +425,6 @@ export const projects: Project[] = [
       "Mobile-first frontend design constraints including virtual keyboard view resizing and touch target ergonomics.",
       "Cross-testing mobile user flows to ensure consistent onboarding across devices.",
     ],
-    github:
-      "https://github.com/Outcess-Solutions-Nigeria-Limited/attendly_pro_mobile",
     accent: "violet",
   },
   {
@@ -465,7 +461,6 @@ export const projects: Project[] = [
     learnings: [
       "Operating within an agile organizational team structure with shared sprint goals and version control discipline.",
     ],
-    github: "https://github.com/Outcess-Solutions-Nigeria-Limited/ATS-v2",
     accent: "orange",
   },
   {
@@ -516,7 +511,6 @@ export const projects: Project[] = [
       "Working systematically through QA defect cycles to verify fixes across multiple browser environments.",
     ],
     live: "https://outcess.com",
-    github: "https://github.com/Outcess-Solutions-Nigeria-Limited/outcess-web",
     accent: "green",
   },
 ];

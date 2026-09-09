@@ -61,7 +61,7 @@
 | **Memory Card Game** | Personal Build | Dynamic grid shuffling, turn & match evaluation logic | [Live Demo](https://memory-card-psi-two.vercel.app/) · [GitHub](https://github.com/ibrahimaliy/MEMORY-CARD) |
 | **Weather App** | Personal Build | Asynchronous REST geocoding & Open-Meteo forecasts | [Live Demo](https://weather-app-two-ruddy-23.vercel.app/) · [GitHub](https://github.com/ibrahimaliy/WEATHER-APP) |
 | **Notepad App** | Personal Build | LocalStorage persistence, clean note management UI | [Live Demo](https://react-app-drab-one-37.vercel.app/) · [GitHub](https://github.com/ibrahimaliy/React-App) |
-| **Outcess Corporate Web** | Professional (Team) | Corporate digital service pages, cross-browser responsive testing | [Live Site](https://outcess.com) · [GitHub](https://github.com/Outcess-Solutions-Nigeria-Limited/outcess-web) |
+| **Outcess Corporate Web** | Professional (Team) | Corporate digital service pages, cross-browser responsive testing | [Live Site](https://outcess.com) |
 
 ---
 

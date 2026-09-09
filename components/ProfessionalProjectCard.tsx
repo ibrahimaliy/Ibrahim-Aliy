@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight, Github, CheckCircle2, Building2 } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Building2 } from "lucide-react";
 import { Project } from "@/types/project";
 import { TechChip } from "./TechChip";
 
@@ -66,20 +66,6 @@ export function ProfessionalProjectCard({ project }: { project: Project }) {
         >
           View contribution details <ArrowUpRight size={13} />
         </Link>
-
-        {project.github && (
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1 text-xs text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-300 transition font-mono"
-            title="Organization Repository (Outcess Solutions)"
-          >
-            <Github size={13} />
-            <span className="hidden sm:inline">Org Repo</span>
-            <ArrowUpRight size={11} />
-          </a>
-        )}
       </div>
     </article>
   );
