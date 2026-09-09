@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Sun, Moon, Laptop } from "lucide-react";
-import { useTheme, Theme } from "./ThemeProvider";
+import { Sun, Moon } from "lucide-react";
+import { useTheme } from "./ThemeProvider";
 
 interface ThemeToggleProps {
   variant?: "compact" | "segmented";
@@ -10,7 +10,7 @@ interface ThemeToggleProps {
 }
 
 export function ThemeToggle({ variant = "compact", className = "" }: ThemeToggleProps) {
-  const { theme, resolvedTheme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -27,27 +27,17 @@ export function ThemeToggle({ variant = "compact", className = "" }: ThemeToggle
     );
   }
 
-  // Cycle through: system -> light -> dark -> system
-  const handleCycle = () => {
-    if (theme === "system") {
-      setTheme("light");
-    } else if (theme === "light") {
-      setTheme("dark");
-    } else {
-      setTheme("system");
-    }
+  // Toggle between dark and light
+  const handleToggle = () => {
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
 
   const getLabel = () => {
-    if (theme === "system") return `Theme: System (${resolvedTheme})`;
-    if (theme === "light") return "Theme: Light";
-    return "Theme: Dark";
+    return resolvedTheme === "dark" ? "Theme: Dark" : "Theme: Light";
   };
 
   const getNextModeName = () => {
-    if (theme === "system") return "Switch to Light mode";
-    if (theme === "light") return "Switch to Dark mode";
-    return "Switch to System preference (Auto)";
+    return resolvedTheme === "dark" ? "Switch to Light mode" : "Switch to Dark mode";
   };
 
   if (variant === "segmented") {
@@ -59,50 +49,34 @@ export function ThemeToggle({ variant = "compact", className = "" }: ThemeToggle
       >
         <button
           type="button"
-          onClick={() => setTheme("system")}
+          onClick={() => setTheme("dark")}
           className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full transition-colors ${
-            theme === "system"
+            resolvedTheme === "dark"
               ? "bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 shadow-sm font-semibold"
               : "text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-200"
           }`}
           role="radio"
-          aria-checked={theme === "system"}
-          title="Match operating system preference automatically"
+          aria-checked={resolvedTheme === "dark"}
+          title="Switch to dark mode"
         >
-          <Laptop size={13} />
-          <span>Auto</span>
+          <Moon size={13} />
+          <span>Dark</span>
         </button>
 
         <button
           type="button"
           onClick={() => setTheme("light")}
           className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full transition-colors ${
-            theme === "light"
+            resolvedTheme === "light"
               ? "bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 shadow-sm font-semibold"
               : "text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-200"
           }`}
           role="radio"
-          aria-checked={theme === "light"}
-          title="Force light mode"
+          aria-checked={resolvedTheme === "light"}
+          title="Switch to light mode"
         >
           <Sun size={13} />
           <span>Light</span>
-        </button>
-
-        <button
-          type="button"
-          onClick={() => setTheme("dark")}
-          className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full transition-colors ${
-            theme === "dark"
-              ? "bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 shadow-sm font-semibold"
-              : "text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-200"
-          }`}
-          role="radio"
-          aria-checked={theme === "dark"}
-          title="Force dark mode"
-        >
-          <Moon size={13} />
-          <span>Dark</span>
         </button>
       </div>
     );
@@ -112,20 +86,12 @@ export function ThemeToggle({ variant = "compact", className = "" }: ThemeToggle
   return (
     <button
       type="button"
-      onClick={handleCycle}
+      onClick={handleToggle}
       className={`relative inline-flex items-center justify-center h-7 w-7 rounded-full text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white border border-zinc-200/80 dark:border-zinc-800 bg-zinc-100/70 dark:bg-zinc-900/60 hover:bg-zinc-200/80 dark:hover:bg-zinc-800 transition-all focus-visible:outline-2 focus-visible:outline-emerald-500 ${className}`}
       aria-label={`${getLabel()}. Click to ${getNextModeName().toLowerCase()}`}
       title={`${getLabel()} · Click to ${getNextModeName().toLowerCase()}`}
     >
-      {theme === "system" ? (
-        <span className="relative flex items-center justify-center">
-          <Laptop size={14} />
-          <span
-            className="absolute -bottom-1 -right-1 h-1.5 w-1.5 rounded-full bg-emerald-500"
-            title="Auto-syncing with OS"
-          />
-        </span>
-      ) : theme === "light" ? (
+      {resolvedTheme === "light" ? (
         <Sun size={14} className="text-amber-500" />
       ) : (
         <Moon size={14} className="text-blue-400" />

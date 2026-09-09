@@ -16,7 +16,7 @@
   - Automatically matches OS/browser color scheme (`prefers-color-scheme`) by default.
   - Real-time reactive listener for system theme changes without page reloads.
   - Zero Flash of Unstyled Theme (Zero FOUT) via synchronous `<head>` script.
-  - Multi-variant controls: compact icon toggle on desktop, 3-option segmented radio (`Auto` · `Light` · `Dark`) in the mobile drawer.
+  - Multi-variant controls: compact icon toggle on desktop, 2-option segmented radio (`Dark` · `Light`) in the mobile drawer (with automatic system preference as default).
   - Persisted user override via `localStorage`.
 
 - **📐 Dual Visual Craft**:
