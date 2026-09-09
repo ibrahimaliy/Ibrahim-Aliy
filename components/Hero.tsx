@@ -70,19 +70,19 @@ export function Hero() {
 
         {/* Quiet Trust Signals */}
         <div className="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 border-t border-zinc-200 dark:border-zinc-800/80 pt-6 text-xs text-zinc-500 dark:text-zinc-400">
-          <div className="rounded-lg border border-zinc-200 dark:border-zinc-800/40 sm:border-transparent bg-zinc-100/50 dark:bg-zinc-900/20 sm:bg-transparent p-2.5 sm:p-0">
-            <span className="block font-mono text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+          <div className="rounded-lg border border-zinc-200 dark:border-zinc-800/40 sm:border-transparent bg-zinc-100/50 dark:bg-zinc-900/20 sm:bg-transparent p-2.5 sm:p-2">
+            <span className="block  font-mono text-sm font-semibold text-zinc-900 dark:text-zinc-100">
               Outcess Solutions
             </span>
             <span className="text-[11px] text-zinc-500 font-mono">Frontend Intern</span>
           </div>
-          <div className="rounded-lg border border-zinc-200 dark:border-zinc-800/40 sm:border-transparent bg-zinc-100/50 dark:bg-zinc-900/20 sm:bg-transparent p-2.5 sm:p-0">
+          <div className="rounded-lg border border-zinc-200 dark:border-zinc-800/40 sm:border-transparent bg-zinc-100/50 dark:bg-zinc-900/20 sm:bg-transparent p-2.5 sm:p-2">
             <span className="block font-mono text-sm font-semibold text-zinc-900 dark:text-zinc-100">
               Fila Yoruba
             </span>
             <span className="text-[11px] text-zinc-500 font-mono">Flagship Platform</span>
           </div>
-          <div className="rounded-lg border border-zinc-200 dark:border-zinc-800/40 sm:border-transparent bg-zinc-100/50 dark:bg-zinc-900/20 sm:bg-transparent p-2.5 sm:p-0">
+          <div className="rounded-lg border border-zinc-200 dark:border-zinc-800/40 sm:border-transparent bg-zinc-100/50 dark:bg-zinc-900/20 sm:bg-transparent p-2.5 sm:p-2">
             <span className="block font-mono text-sm font-semibold text-zinc-900 dark:text-zinc-100">
               100% Type-Safe
             </span>
