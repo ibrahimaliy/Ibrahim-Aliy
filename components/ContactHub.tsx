@@ -1,9 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { Mail, Phone, Copy, Check, ArrowUpRight, Download, Github, Linkedin } from "lucide-react";
+import { Mail, Phone, Copy, Check, ArrowUpRight, Download, Github, Linkedin, Eye } from "lucide-react";
+import { useCvModal } from "./CvModalContext";
 
 export function ContactHub() {
+  const { openCv } = useCvModal();
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedPhone, setCopiedPhone] = useState(false);
 
@@ -113,13 +115,22 @@ export function ContactHub() {
             </a>
           </div>
 
+          <button
+            type="button"
+            onClick={openCv}
+            className="button button--secondary justify-center text-xs sm:text-sm cursor-pointer"
+          >
+            <Eye size={14} className="text-emerald-500" />
+            <span>Preview Résumé</span>
+          </button>
+
           <a
             className="button button--secondary justify-center text-xs sm:text-sm"
             href="/Ibrahim-Aliy-Resume.pdf"
             download="Ibrahim-Aliy-Resume.pdf"
           >
             <Download size={14} />
-            <span>Download Résumé (PDF)</span>
+            <span>Download PDF</span>
           </a>
         </div>
       </div>

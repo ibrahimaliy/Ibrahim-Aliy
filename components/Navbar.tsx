@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ArrowUpRight, FileText, Github, Linkedin } from "lucide-react";
+import { Menu, X, ArrowUpRight, FileText, Github, Linkedin, Eye } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
+import { useCvModal } from "./CvModalContext";
 
 const NAV_ITEMS = [
   { href: "/#work", id: "work", label: "Work" },
@@ -14,6 +15,7 @@ const NAV_ITEMS = [
 ];
 
 export function Navbar() {
+  const { openCv } = useCvModal();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
@@ -157,14 +159,15 @@ export function Navbar() {
             <Linkedin size={15} />
           </a>
 
-          <a
-            href="/Ibrahim-Aliy-Resume.pdf"
-            download="Ibrahim-Aliy-Resume.pdf"
-            className="hidden md:inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition font-mono"
+          <button
+            type="button"
+            onClick={openCv}
+            className="hidden md:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white bg-zinc-100/70 hover:bg-zinc-200/80 dark:bg-zinc-800/60 dark:hover:bg-zinc-800 transition font-mono border border-zinc-200 dark:border-zinc-700/60 cursor-pointer"
+            title="Preview CV in browser"
           >
-            <FileText size={11} />
+            <Eye size={12} className="text-emerald-500" />
             <span>CV</span>
-          </a>
+          </button>
 
           <a className="nav-cta" href="mailto:ibrahimaliy1907@gmail.com">
             <span>Let’s talk</span>
@@ -238,6 +241,19 @@ export function Navbar() {
               </span>
               <ArrowUpRight size={15} className="text-zinc-500" />
             </a>
+            <button
+              type="button"
+              onClick={() => {
+                closeMenu();
+                openCv();
+              }}
+              className="mobile-nav-link text-left w-full cursor-pointer"
+            >
+              <span className="flex items-center gap-2">
+                <Eye size={15} className="text-emerald-500" /> Preview CV
+              </span>
+              <ArrowUpRight size={15} className="text-zinc-500" />
+            </button>
             <a
               href="/Ibrahim-Aliy-Resume.pdf"
               download="Ibrahim-Aliy-Resume.pdf"
@@ -245,7 +261,7 @@ export function Navbar() {
               className="mobile-nav-link"
             >
               <span className="flex items-center gap-2">
-                <FileText size={15} /> Download Résumé
+                <FileText size={15} /> Download Résumé (PDF)
               </span>
               <ArrowUpRight size={15} className="text-zinc-500" />
             </a>

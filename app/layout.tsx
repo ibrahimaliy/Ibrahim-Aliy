@@ -129,6 +129,9 @@ const themeScript = `
 })();
 `;
 
+import { CvModalProvider } from "@/components/CvModalContext";
+import { CvPreviewModal } from "@/components/CvPreviewModal";
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -149,7 +152,10 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased selection:bg-emerald-500/20 selection:text-emerald-500 dark:selection:text-emerald-300">
         <ThemeProvider>
-          {children}
+          <CvModalProvider>
+            {children}
+            <CvPreviewModal />
+          </CvModalProvider>
         </ThemeProvider>
       </body>
     </html>

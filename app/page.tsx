@@ -204,8 +204,9 @@ export default function Home() {
               X (Twitter)
             </a>
             <a href="mailto:ibrahimaliy1907@gmail.com">Email</a>
+            <Link href="/cv">Preview CV</Link>
             <a href="/Ibrahim-Aliy-Resume.pdf" download="Ibrahim-Aliy-Resume.pdf">
-              Résumé
+              Download PDF
             </a>
           </div>
         </div>

@@ -1,8 +1,12 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
-import { ArrowDownRight, ArrowUpRight, Download, Terminal } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, Download, Terminal, Eye } from "lucide-react";
+import { useCvModal } from "./CvModalContext";
 
 export function Hero() {
+  const { openCv } = useCvModal();
   return (
     <section className="hero container">
       {/* Left Column: Core Positioning & Identity */}
@@ -36,14 +40,15 @@ export function Hero() {
             <ArrowDownRight size={15} />
           </Link>
 
-          <a
-            className="button button--secondary"
-            href="/Ibrahim-Aliy-Resume.pdf"
-            download="Ibrahim-Aliy-Resume.pdf"
+          <button
+            type="button"
+            onClick={openCv}
+            className="button button--secondary cursor-pointer"
+            title="Preview CV directly in browser"
           >
-            <span>Download résumé</span>
-            <Download size={14} />
-          </a>
+            <span>Preview CV</span>
+            <Eye size={14} className="text-emerald-500" />
+          </button>
 
           {/* Social CTAs row */}
           <div className="flex items-center gap-2.5 w-full sm:w-auto pt-1 sm:pt-0">
