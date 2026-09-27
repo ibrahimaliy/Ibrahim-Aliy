@@ -24,8 +24,9 @@ export function Hero() {
         <p className="hero__lead">
           I’m Ibrahim Aliy — a frontend developer building fast, scalable, and
           visually refined interfaces using React, Next.js, TypeScript, and
-          Tailwind CSS. Currently contributing to enterprise web applications at
-          Outcess Solutions while architecting independent digital products.
+          Tailwind CSS. Currently contributing to production interfaces and admin
+          systems as a Frontend Developer Intern at Outcess Solutions while
+          architecting independent digital products.
         </p>
 
         {/* Action Buttons */}

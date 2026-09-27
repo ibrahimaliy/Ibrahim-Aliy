@@ -34,7 +34,7 @@ export function SkillsSection() {
     "Problem Solving",
     "Team Collaboration",
     "Adaptability",
-    "Technical Communication",
+    "Communication",
     "Time Management",
   ];
 

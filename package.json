@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "generate:resume": "node scripts/generate-resume.js"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

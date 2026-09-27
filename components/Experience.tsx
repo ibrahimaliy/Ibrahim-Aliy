@@ -12,33 +12,33 @@ import {
 
 export function Experience() {
   const outcessDuties = [
-    "Develop and improve responsive web interfaces using React.js and modern frontend development practices.",
-    "Contribute to production web pages and admin interfaces, implementing UI enhancements and resolving QA-reported issues.",
-    "Integrate frontend features with REST APIs and collaborate with team members using Git and GitHub.",
-    "Participate in testing, debugging, code maintenance, and responsive optimization across desktop and mobile experiences.",
+    "Build and enhance responsive web interfaces using React.js and modern frontend practices for production web pages and admin panels.",
+    "Resolve QA-reported issues through structured testing and debugging across desktop and mobile environments.",
+    "Integrate frontend features with REST APIs, collaborating with the development team via Git and GitHub.",
+    "Contribute to code maintenance and responsive optimization to ensure consistent performance across devices.",
   ];
 
   const otherRoles = [
     {
       period: "2024 — PRESENT",
       role: "Technical Freelancer — IT & Security Services",
-      company: "Independent Practice",
+      company: "Self-employed",
       details:
-        "Deliver networking, technical support, CCTV, and access-control solutions and troubleshoot hardware, software, and connectivity issues.",
+        "Deliver networking, technical support, CCTV, and access-control solutions for clients, diagnosing and resolving hardware, software, and connectivity issues.",
     },
     {
       period: "2023 — 2024",
       role: "Network Administrator & Security Installer",
       company: "TechMax",
       details:
-        "Executed network deployments, diagnostics, system troubleshooting, and security-system installations.",
+        "Executed network deployments and diagnostics, resolving system-level issues across client environments. Installed and configured security systems for client sites.",
     },
     {
       period: "2022 — 2023",
       role: "Technical Officer",
       company: "FEMTECH IT",
       details:
-        "Resolved hardware and software issues and supported the maintenance of network infrastructure.",
+        "Resolved hardware and software issues for end users while supporting ongoing maintenance of network infrastructure.",
     },
   ];
 

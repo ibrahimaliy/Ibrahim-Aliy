@@ -46,8 +46,9 @@ export default function Home() {
             <p className="mt-3 max-w-3xl text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
               Beyond independent projects, I contribute to real-world enterprise products as a
               Frontend Developer Intern. Working collaboratively alongside other engineers,
-              I build admin interfaces, mobile registration flows, corporate service pages,
-              and resolve QA defects across multiple production environments.
+              I build and enhance responsive web interfaces using React.js and modern frontend
+              practices for production web pages and admin panels, and resolve QA-reported issues
+              across desktop and mobile environments.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-4">
@@ -145,8 +146,9 @@ export default function Home() {
               clean component architecture, accessibility, and high perceived performance.
             </p>
             <p>
-              Currently, I'm contributing to production codebases at Outcess Solutions while
-              architecting independent digital products like the Fila Yoruba commerce platform.
+              Currently, I'm contributing to production interfaces and admin systems as a
+              Frontend Developer Intern at Outcess Solutions while architecting independent
+              digital products like the Fila Yoruba commerce platform.
               I treat every interface not just as markup, but as a considered user experience.
             </p>
             <div className="pt-2">
